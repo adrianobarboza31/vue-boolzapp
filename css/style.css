@@ -65,3 +65,7 @@ img{
 .cerca{
     border:1px solid black;
 }
+.sfondo{
+    background-image: url("../img/mine.jpg");
+    height: calc(596px - 70px);
+}

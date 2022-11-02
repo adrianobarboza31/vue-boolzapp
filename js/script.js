@@ -2,6 +2,7 @@ const{createApp}=Vue;
 createApp({
     data(){
         return{
+            indice:0,
             contacts: [
                 {
                     name: 'Michele',
@@ -174,5 +175,11 @@ createApp({
                     }
                 ]
         }
+    }, methods:{
+        slider(i){
+           this.indice=i 
+        //    return this.indice
+        }
+        
     }
 }).mount("#app")
