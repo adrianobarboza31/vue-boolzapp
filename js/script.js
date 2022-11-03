@@ -2,6 +2,7 @@ const{createApp}=Vue;
 createApp({
     data(){
         return{
+            invia:"",
             indice:0,
             contacts: [
                 {
@@ -179,6 +180,34 @@ createApp({
         slider(i){
            this.indice=i 
         //    return this.indice
+        },
+        invmes(){
+            const ogg={
+                date: '10/01/2020 15:51:00',
+                message: this.invia,
+                status: 'sent'
+                }
+               this.contacts[this.indice].messages.push(ogg)
+               this.invia=""
+        //        setTimeout(risposta,1000)
+        //        function risposta(){
+        //         const oggt={
+        //             date: '10/01/2020 15:51:00',
+        //             message: "ok",
+        //             status: 'received'
+        //             }
+        //            this.contacts[this.indice].messages.push(oggt)
+        //        }
+        // }
+        const risposta=()=>{
+            const oggt={
+                            date: '10/01/2020 15:51:00',
+                            message: "ok",
+                            status: 'received'
+                            }
+                           this.contacts[this.indice].messages.push(oggt)
+                       }
+                       setTimeout(risposta,1000)
         }
         
     }

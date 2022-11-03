@@ -15,21 +15,23 @@
 }
 .bo{
     position: relative;
+    height: 90%;
 }
 .ab-ct div.message-box{
-border: 2px solid black;
+/* border: 2px solid black; */
 }
 .ab-ct div.contact-box{
-    border: 2px solid black;
+    /* border: 2px solid black; */
     }
 .contact-box{
-    width: 40%;
+    width: 35%;
 }
 .message-box{
-    width: 60%;
+    width: 65%;
 }
 img{
     width: 50px;
+    height: 50px;
     border-radius: 50%;
    
 }
@@ -58,14 +60,79 @@ img{
 }
 .search{
     padding: 10px;
+    width: 100%;
 }
 .search input{
-    width: 500px;
+    width: 100%;
+    border: 0px solid black;
 }
 .cerca{
-    border:1px solid black;
+    border:0px solid black;
 }
 .sfondo{
     background-image: url("../img/mine.jpg");
-    height: calc(596px - 70px);
+    height: calc(100% - 140px);
+    overflow: auto;
+}
+.padre{
+    height: 100vh;
+}
+.ab-grandezza{
+    width: 55%;
+}
+.active{
+    background-color: #E9EBEB;
+}
+.selezionata:hover{
+    background-color: rgba(233, 235, 235, 0.7);
+    
+}
+.ab-g{
+    width: 10%;
+   
+}
+.ab-c{
+    width: 80%;
+    
+}
+.ab-c input{
+    width: 100%;
+    height: 50px;
+   border: 0px solid black;
+}
+.hd-ct{
+    background-color:#F3EEEA;
+    padding: 10px;
+}
+.bo2{
+    width: 85%;
+}
+.bo3{
+    width: 15%;
+}
+.inviato{
+    background-color:#D5F9BA ;
+    padding: 15px;
+    width: 30%;
+    border-radius: 10px;
+  
+}
+.ab-inviato{
+    display: flex;
+    justify-content: end;
+    padding-right: 80px;
+}
+.ab-ricevuto{
+    display: flex;
+    justify-content: start;
+    padding-left: 80px;
+}
+.ricevuto{
+    background-color:white;
+    padding: 15px;
+    width: 30%;
+    border-radius: 10px;
+}
+i{
+   color: #B1B1B1;
 }
