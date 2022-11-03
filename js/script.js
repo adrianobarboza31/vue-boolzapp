@@ -2,10 +2,11 @@ const{createApp}=Vue;
 createApp({
     data(){
         return{
+            searchTerm:"",
             invia:"",
             indice:0,
             contacts: [
-                {
+                {   id:0,
                     name: 'Michele',
                     avatar: '_1',
                     image:'../img/avatar_1.jpg',
@@ -29,6 +30,7 @@ createApp({
                     ],
                     },
                     {
+                        id:1,
                     name: 'Fabio',
                     avatar: '_2',
                     visible: true,
@@ -52,6 +54,7 @@ createApp({
                     ],
                     },
                     {
+                        id:2,
                     name: 'Samuele',
                     avatar: '_3',
                     visible: true,
@@ -75,6 +78,7 @@ createApp({
                     ],
                     },
                     {
+                        id:3,
                     name: 'Alessandro B.',
                     avatar: '_4',
                     image:'../img/avatar_4.jpg',
@@ -93,6 +97,7 @@ createApp({
                     ],
                     },
                     {
+                        id:4,
                     name: 'Alessandro L.',
                     avatar: '_5',
                     image:'../img/avatar_5.jpg',
@@ -111,6 +116,7 @@ createApp({
                     ],
                     },
                     {
+                        id:5,
                     name: 'Claudia',
                     avatar: '_6',
                     image:'../img/avatar_6.jpg',
@@ -134,6 +140,7 @@ createApp({
                     ],
                     },
                     {
+                        id:6,
                     name: 'Federico',
                     avatar: '_7',
                     image:'../img/avatar_7.jpg',
@@ -152,6 +159,7 @@ createApp({
                     ],
                     },
                     {
+                        id:7,
                     name: 'Davide',
                     avatar: '_8',
                     image:'../img/avatar_8.jpg',
@@ -177,8 +185,8 @@ createApp({
                 ]
         }
     }, methods:{
-        slider(i){
-           this.indice=i 
+        slider(id){
+           this.indice=this.contacts.findIndex((value)=>value.id===id)
         //    return this.indice
         },
         invmes(){
@@ -208,7 +216,21 @@ createApp({
                            this.contacts[this.indice].messages.push(oggt)
                        }
                        setTimeout(risposta,1000)
+        },
+        findContact(){
+            // this.contacts=this.contacts.filter((value)=>{
+            //     const name=value.name.toLowerCase();
+            //     return name.includes(this.searchTerm.toLowerCase())
+            // })
         }
         
+    },
+    computed:{
+        filteredContacts(){
+            return this.contacts.filter((value)=>{
+                const name=value.name.toLowerCase();
+                return name.includes(this.searchTerm.toLowerCase())
+            })
+        }
     }
 }).mount("#app")

@@ -41,13 +41,13 @@
                         <div class="d-flex cerca">
                             <div class="d-flex search">
                                 <div class="bo3 d-flex align-items-center  justify-content-center">  <i class="fa-solid fa-magnifying-glass my-lens"></i></div>
-                                <div class="bo2"><input type="text" placeholder="Cerca o inizia una nuova chat"></div>
+                                <div class="bo2"><input type="text" placeholder="Cerca o inizia una nuova chat" v-model.trim="searchTerm" ></div>
                             </div>
                            
                         </div>
                     </div>
                     <div>
-                        <div v-for="(value,index) in contacts" class="justify-content-between d-flex pt-2 pb-2 selezionata" @click="slider(index)" :class="(index==indice)?'active':''">
+                        <div v-for="(value,index) in filteredContacts" class="justify-content-between d-flex pt-2 pb-2 selezionata" @click="slider(value.id)" :class="(index==indice)?'active':''">
                             <div class="ab-grandezza">
                                 <div class="d-flex">
                                     <div class="ps-2">
