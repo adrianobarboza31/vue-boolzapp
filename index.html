@@ -19,7 +19,7 @@
             <div class="ab-hd"></div>
             <div class="ab-mn"></div>
             <div class="bg-white ab-ct  d-flex h-100">
-                <div class="contact-box h-100">
+                <div class="contact-box h-100 ">
                     <div class="d-flex justify-content-between align-items-center hd-cb">
                         <div class="d-flex align-items-center">
                             <img src="./img/avatar_io.jpg" alt="">
@@ -46,8 +46,8 @@
                            
                         </div>
                     </div>
-                    <div>
-                        <div v-for="(value,index) in filteredContacts" class="justify-content-between d-flex pt-2 pb-2 selezionata" @click="slider(value.id)" :class="(index==indice)?'active':''">
+                    <div class="bo4">
+                        <div v-for="(value,index) in filteredContacts" class="justify-content-between d-flex pt-2 pb-2 selezionata" @click="slider(value.id)"  :class="(index==indice)?'active':''">
                             <div class="ab-grandezza">
                                 <div class="d-flex">
                                     <div class="ps-2">
@@ -69,8 +69,15 @@
                 <div class="message-box h-100">
                     <div class="d-flex justify-content-between align-items-center hd-cb">
                         <div class="d-flex align-items-center">
-                            <img  :src="contacts[indice].image" alt="">
-                            <span>{{contacts[indice].name}}</span>
+                            <div>
+                                <img  :src="contacts[indice].image" alt="">
+                            </div>
+                            <div>
+                                <span>{{contacts[indice].name}}</span>
+                                <br>
+                                <span>ultimo accesso alle{{contacts[indice].messages[0].date}}</span>
+                            </div>
+                            
                         </div>
                         <div>
                             <i class="fa-solid fa-magnifying-glass mx-2"></i>
@@ -79,7 +86,7 @@
                         </div>
                     </div>
                     <div class="sfondo">
-                        <div v-for="(value,index) in contacts[indice].messages" class="pt-5 pb-3" :class="(value.status == 'sent') ? 'ab-inviato':'ab-ricevuto '">
+                        <div v-for="(value,index) in contacts[indice].messages" class="pt-5 pb-3" :class="(value.status == 'sent') ? 'ab-inviato':'ab-ricevuto '" ref="msg">
                             <div :class="(value.status == 'sent') ? 'inviato':'ricevuto '">
                                 {{value.message}}
                             </div>

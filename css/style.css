@@ -136,3 +136,7 @@ img{
 i{
    color: #B1B1B1;
 }
+.bo4{
+    height: calc(100% - 186px);
+    overflow: auto;
+}

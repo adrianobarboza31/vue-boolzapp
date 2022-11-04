@@ -2,6 +2,7 @@ const{createApp}=Vue;
 createApp({
     data(){
         return{
+            lunghezza:0,
             searchTerm:"",
             invia:"",
             indice:0,
@@ -9,7 +10,7 @@ createApp({
                 {   id:0,
                     name: 'Michele',
                     avatar: '_1',
-                    image:'../img/avatar_1.jpg',
+                    image:'./img/avatar_1.jpg',
                     visible: true,
                     messages: [
                     {
@@ -34,7 +35,7 @@ createApp({
                     name: 'Fabio',
                     avatar: '_2',
                     visible: true,
-                    image:'../img/avatar_2.jpg',
+                    image:'./img/avatar_2.jpg',
                     messages: [
                     {
                     date: '20/03/2020 16:30:00',
@@ -58,7 +59,7 @@ createApp({
                     name: 'Samuele',
                     avatar: '_3',
                     visible: true,
-                    image:'../img/avatar_3.jpg',
+                    image:'./img/avatar_3.jpg',
                     messages: [
                     {
                     date: '28/03/2020 10:10:40',
@@ -81,7 +82,7 @@ createApp({
                         id:3,
                     name: 'Alessandro B.',
                     avatar: '_4',
-                    image:'../img/avatar_4.jpg',
+                    image:'./img/avatar_4.jpg',
                     visible: true,
                     messages: [
                     {
@@ -100,7 +101,7 @@ createApp({
                         id:4,
                     name: 'Alessandro L.',
                     avatar: '_5',
-                    image:'../img/avatar_5.jpg',
+                    image:'./img/avatar_5.jpg',
                     visible: true,
                     messages: [
                     {
@@ -119,7 +120,7 @@ createApp({
                         id:5,
                     name: 'Claudia',
                     avatar: '_6',
-                    image:'../img/avatar_6.jpg',
+                    image:'./img/avatar_6.jpg',
                     visible: true,
                     messages: [
                     {
@@ -143,7 +144,7 @@ createApp({
                         id:6,
                     name: 'Federico',
                     avatar: '_7',
-                    image:'../img/avatar_7.jpg',
+                    image:'./img/avatar_7.jpg',
                     visible: true,
                     messages: [
                     {
@@ -162,7 +163,7 @@ createApp({
                         id:7,
                     name: 'Davide',
                     avatar: '_8',
-                    image:'../img/avatar_8.jpg',
+                    image:'./img/avatar_8.jpg',
                     visible: true,
                     messages: [
                     {
@@ -185,8 +186,10 @@ createApp({
                 ]
         }
     }, methods:{
-        slider(id){
+        slider(id, it){
            this.indice=this.contacts.findIndex((value)=>value.id===id)
+          
+           console.log(lunghezza)
         //    return this.indice
         },
         invmes(){
@@ -197,16 +200,6 @@ createApp({
                 }
                this.contacts[this.indice].messages.push(ogg)
                this.invia=""
-        //        setTimeout(risposta,1000)
-        //        function risposta(){
-        //         const oggt={
-        //             date: '10/01/2020 15:51:00',
-        //             message: "ok",
-        //             status: 'received'
-        //             }
-        //            this.contacts[this.indice].messages.push(oggt)
-        //        }
-        // }
         const risposta=()=>{
             const oggt={
                             date: '10/01/2020 15:51:00',
@@ -214,16 +207,11 @@ createApp({
                             status: 'received'
                             }
                            this.contacts[this.indice].messages.push(oggt)
+                         
+                        //    element.scrollIntoView()
                        }
                        setTimeout(risposta,1000)
-        },
-        findContact(){
-            // this.contacts=this.contacts.filter((value)=>{
-            //     const name=value.name.toLowerCase();
-            //     return name.includes(this.searchTerm.toLowerCase())
-            // })
-        }
-        
+        }, 
     },
     computed:{
         filteredContacts(){
