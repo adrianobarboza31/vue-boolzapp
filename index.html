@@ -87,9 +87,17 @@
                     </div>
                     <div class="sfondo">
                         <div v-for="(value,index) in contacts[indice].messages" class="pt-5 pb-3" :class="(value.status == 'sent') ? 'ab-inviato':'ab-ricevuto '" ref="msg">
-                            <div :class="(value.status == 'sent') ? 'inviato':'ricevuto '">
+                            <div @mouseleave="leave" :class="(value.status == 'sent') ? 'inviato':'ricevuto '" class="d-flex justify-content-between bo6 bo7">
                                 {{value.message}}
+                                <div class="tendin" @click="myfilter()"    >
+                                    <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                                    <div :class="(isActive === false) ? 'ab-el':'ab-el2'">
+                                        <span>message info</span> <br>
+                                        <span @click="remove(index)">delete</span>
+                                    </div>
+                                </div>
                             </div>
+                           
                         </div>
                         
                     </div>

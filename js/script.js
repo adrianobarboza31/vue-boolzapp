@@ -2,6 +2,7 @@ const{createApp}=Vue;
 createApp({
     data(){
         return{
+            isActive:false,
             lunghezza:0,
             searchTerm:"",
             invia:"",
@@ -186,11 +187,8 @@ createApp({
                 ]
         }
     }, methods:{
-        slider(id, it){
+        slider(id){
            this.indice=this.contacts.findIndex((value)=>value.id===id)
-          
-           console.log(lunghezza)
-        //    return this.indice
         },
         invmes(){
             const ogg={
@@ -212,6 +210,16 @@ createApp({
                        }
                        setTimeout(risposta,1000)
         }, 
+        myfilter(){
+            this.isActive=!this.isActive
+            console.log(this.isActive)
+        },
+        leave(){
+            this.isActive=false 
+        },
+        remove(i){
+            this.contacts[this.indice].messages.splice(i,1)
+        }
     },
     computed:{
         filteredContacts(){

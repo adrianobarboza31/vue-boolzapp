@@ -140,3 +140,33 @@ i{
     height: calc(100% - 186px);
     overflow: auto;
 }
+.tendin{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.bo6:hover div.tendin{
+    display: block;
+}
+.ab-el{
+    background:rgba(255,255,255, 1);
+    width: 150px;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 10;
+  display: none;
+}
+.bo7{
+    position: relative;
+}
+.ab-el2{
+    background:rgba(255,255,255, 1);
+    width: 150px;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  bottom: 10;
+  display: block;
+}
